@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Application Registration</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3S7FJ6v7vKkG2+MZ8zZsae2b2Jp3Qk7Pj8b+7yg=" crossorigin="anonymous"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Online Application Registration</h1>
+    <p class="subtitle">Fill in your details and submit the form.</p>
+
+    <form id="registrationForm" action="process.php" method="POST" novalidate>
+      <div class="form-group">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="e.g., Priya Sharma" required />
+        <small class="error" data-for="fullName"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="e.g., priya@example.com" required />
+        <small class="error" data-for="email"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required />
+        <small class="error" data-for="phone"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of birth</label>
+        <input type="date" id="dob" name="dob" required />
+        <small class="error" data-for="dob"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select...</option>
+          <option>Female</option>
+          <option>Male</option>
+          <option>Non-binary</option>
+          <option>Prefer not to say</option>
+        </select>
+        <small class="error" data-for="gender"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="program">Program applying for</label>
+        <select id="program" name="program" required>
+          <option value="">Select...</option>
+          <option>Bachelor of Computer Applications (BCA)</option>
+          <option>Bachelor of Engineering (CSE)</option>
+          <option>Master of Computer Applications (MCA)</option>
+          <option>Master of Business Administration (MBA)</option>
+        </select>
+        <small class="error" data-for="program"></small>
+      </div>
+
+      <div class="form-group">
+        <label>Skills</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="skills[]" value="HTML" /> HTML</label>
+          <label><input type="checkbox" name="skills[]" value="CSS" /> CSS</label>
+          <label><input type="checkbox" name="skills[]" value="JavaScript" /> JavaScript</label>
+          <label><input type="checkbox" name="skills[]" value="Java" /> Java</label>
+          <label><input type="checkbox" name="skills[]" value="Python" /> Python</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="3" placeholder="Street, City, State, ZIP" required></textarea>
+        <small class="error" data-for="address"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="statement">Personal statement</label>
+        <textarea id="statement" name="statement" rows="4" placeholder="Why are you applying?" required></textarea>
+        <small class="error" data-for="statement"></small>
+      </div>
+
+      <button type="submit" class="btn">Submit application</button>
+    </form>
+  </div>
+</body>
+</html>
